@@ -26,7 +26,25 @@ class ViewController: UIViewController,WKUIDelegate {
 
         let myUrl:URL = URL(string: "https://developer.apple.com")!
         let myRequest  = URLRequest(url: myUrl)
-        webView.load(myRequest)
+        //webView.load(myRequest)
+        
+        let task = URLSession.shared.dataTask(with: myRequest)
+        {data,retreive,error in
+            
+            if error == nil
+            {
+                let dataString = NSString(data:data!,encoding:String.Encoding.utf8.rawValue)
+                
+                print(dataString!)
+                
+            }
+            else
+            {
+                print(error!)
+            }
+            
+        }
+        task.resume()
     }
 
     override func didReceiveMemoryWarning() {
