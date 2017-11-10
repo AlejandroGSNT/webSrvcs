@@ -54,9 +54,13 @@ class ViewController: UIViewController,WKUIDelegate {
                     as! [String:Any]
                     
                     let querySubJson = json["query"] as! [String:Any]
+                    
+                    //let pageId = querySubJson.keys
+                   // let pageIdString = pageId.first!
                     let queryPages = querySubJson["pages"] as! [String:Any]
+                    let pageIdString = queryPages.keys.first!
                     print(queryPages)
-                    let queryId = queryPages["993478"] as! [String:Any]
+                    let queryId = queryPages[pageIdString] as! [String:Any]
                     let queryExtract = queryId["extract"] as! String
                     
                     DispatchQueue.main.sync {
