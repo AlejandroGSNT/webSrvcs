@@ -19,23 +19,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7bw-N5-l8x">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="37" y="94" width="291" height="251"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="crossfit" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ccp-yA-r6B">
+                                <rect key="frame" x="16" y="364" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="0.278746698943662" colorSpace="calibratedRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jE-v3-UXN">
+                                <rect key="frame" x="130" y="531" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="0.25385123239436619" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="search:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ney-I2-Mnl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="7bw-N5-l8x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6HP-J6-dEd"/>
-                            <constraint firstItem="7bw-N5-l8x" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="W3Z-AZ-Bu5"/>
-                            <constraint firstItem="7bw-N5-l8x" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Wcf-NF-hie"/>
-                            <constraint firstItem="7bw-N5-l8x" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="oXU-uC-E8w"/>
+                            <constraint firstItem="7bw-N5-l8x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="6HP-J6-dEd"/>
+                            <constraint firstItem="7bw-N5-l8x" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-47" id="W3Z-AZ-Bu5"/>
+                            <constraint firstItem="7bw-N5-l8x" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-322" id="Wcf-NF-hie"/>
+                            <constraint firstItem="7bw-N5-l8x" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="94" id="oXU-uC-E8w"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="textField" destination="ccp-yA-r6B" id="Qua-st-SYT"/>
+                        <outlet property="webView" destination="7bw-N5-l8x" id="LtQ-w5-yy4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
