@@ -35,9 +35,9 @@ class ViewController: UIViewController,WKUIDelegate {
     {
         word = textField.text!
         
-         let apiUrl = "https://es.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&exintro=&titles=\(word!)"
-        
-        let urlObject = URL(string: apiUrl)
+        let apiUrl = "https://es.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&exintro=&titles=\(word!)"
+        let encodedUrl = apiUrl.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
+        let urlObject = URL(string: encodedUrl!)
         
         let task = URLSession.shared.dataTask(with: urlObject!)
         {
@@ -66,6 +66,7 @@ class ViewController: UIViewController,WKUIDelegate {
                     DispatchQueue.main.sync {
                         self.webView.loadHTMLString(queryExtract, baseURL: nil)
                     }
+                    
                 }
                 catch
                 {
@@ -77,6 +78,13 @@ class ViewController: UIViewController,WKUIDelegate {
             }
         }
         task.resume()
+        //begins alert
+        let alertNotFound = UIAlertController(title: "No encontrado", message: "lo siento, pero wikipedia no tiene lo que usted está buscando", preferredStyle: .alert)
+        alertNotFound.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .`default`, handler: { _ in
+            NSLog("The \"OK\" alert occured.")
+        }))
+        self.present(alertNotFound, animated: true, completion: nil)
+        //ends
     }
 
 
